@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptCraft | AI Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Magic Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="PromptCraft-logoo.png" class="logo" alt="PromptCraft Logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#generate">Generate</a></li>
+                    <li><a href="#prompt-examples">Examples</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger Button (☰) -->
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="header-text">
+                
+                <h1>Welcome to <span class="magic-font">PromptCraft</span>, Techie spells for young wizards.</h1>
+              </div>
+        </div>
+    </header>
+
+    <!-- AI Image Generation Section -->
+    <section id="generate">
+        <div class="container" style="position: relative;">
+          <h1 class="sub-title">Generate Your Image</h1>
+          <form id="promptForm">
+            <input type="text" id="prompt" placeholder="Enter your image description" required>
+            <button id="submitBtn" type="submit">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Cast Spell
+              <div class="loader hidden">Loading...</div>
+            </button>
+            <!-- Suggestion Chips -->
+        <div id="suggestionsContainer" class="suggestions-container" style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <div class="chip" data-prompt="A wizard casting a spell"><i class="fa-solid fa-hat-wizard"></i>A wizard casting a spell</div>
+            <div class="chip" data-prompt="A dragon flying over mountains"><i class="fa-solid fa-dragon"></i>A dragon flying</div>
+            <div class="chip" data-prompt="An enchanted castle floating in the sky"><i class="fa-brands fa-fort-awesome"></i>An enchanted castle</div>
+            <div class="chip" data-prompt="A spellbook glowing with ancient runes"><i class="fa-solid fa-wand-sparkles"></i>A magic spellbook</div>
+          </div>
+
+          </form>
+          <div id="loading" class="hidden">Generating...</div>
+          <div id="generatedImageContainer" class="hidden">
+            <img id="generatedImage" src="" alt="">
+          </div>
+      
+          <!-- 🪄 Place the wand here -->
+          <div id="wandSparkle" class="wand-sparkle hidden">🪄</div>
+      
+          <div id="error" class="hidden"></div>
+        </div>
+      </section>
+      
+
+
+    <!-- Fun Fact and Prompt Display Section -->
+    <div id="imageDetails" class="hidden">
+        <h2 id="funFactTitle">Fun Fact about Your Image</h2>
+        <p id="funFact">Did you know...?</p>
+        <h3 id="creativePromptTitle">Creative Prompt</h3>
+        <p id="creativePrompt">Try drawing...!</p>
+    </div>
+
+    <!-- Prompt Examples Section -->
+    <div id="prompt-examples">
+        <div class="container">
+            <h1 class="sub-title">Prompt Examples</h1>
+            <div class="prompt-list">
+                <div class="prompt">
+                    <img src="example-1.png" alt="Example 1">
+                    <div class="layer">
+                        <h3>Futuristic Cityscape</h3>
+                        <p>A sprawling futuristic city with glowing skyscrapers and flying cars.</p>
+                        
+                    </div>
+                </div>
+                <div class="prompt">
+                    <img src="example-2.png" alt="Example 2">
+                    <div class="layer">
+                        <h3>Space Exploration</h3>
+                        <p>An astronaut exploring the surface of an alien planet under a glowing nebula.</p>
+                        
+                    </div>
+                </div>
+                <div class="prompt">
+                    <img src="example-3.png" alt="Example 3">
+                    <div class="layer">
+                        <h3>Underwater World</h3>
+                        <p>A vibrant underwater world filled with colorful sea creatures and corals.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h1 class="sub-title">Our Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-image"></i>
+                    <h2>AI Image Generation</h2>
+                    <p>Create unique images from simple text descriptions. Explore endless creative possibilities.</p>
+                    
+                </div>
+                <div>
+                    <i class="fa-solid fa-cogs"></i>
+                    <h2>Custom Prompt Crafting</h2>
+                    <p>Get personalized prompts tailored to your needs for more accurate and inspiring results.</p>
+                    
+                </div>
+                <div>
+                    <i class="fa-solid fa-share"></i>
+                    <h2>Easy Sharing</h2>
+                    <p>Download or share the generated images directly on your social media platforms.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="about-image.png" alt="A magical AI wand generating art">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Us</h1>
+          <p>
+            At PromptCraft, we blend imagination with innovation, turning simple text prompts into visually stunning, one-of-a-kind artworks. Whether you're a designer looking for inspiration, a marketer crafting standout visuals, or a curious explorer of AI, we have built a magical space just for you.
+          </p>
+          <p>
+            Powered by state-of-the-art AI models, PromptCraft understands your vision and brings it to life in seconds. No design skills? No problem. Just describe what you see in your mind — and watch the magic unfold on screen.
+          </p>
+          <p>
+            Our goal is to make advanced image generation fun, accessible, and endlessly creative. With PromptCraft, you are not just generating pictures — you are crafting visual stories, conjuring dreams, and redefining what’s possible with the power of words.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
