@@ -10,12 +10,15 @@ PromptCraft is designed to offer a unique and immersive web experience with a **
 ---
 
 ## 📁 Project Structure
-
-/promptcraft-frontend │ 
-├── index.html # Main HTML file 
-├── style.css # Global fantasy-themed styles 
-├── script.js # JavaScript for UI logic and mock interactivity 
-└── assets/ # Icons, background images, sparkles, etc.
+/promptcraft-frontend
+│
+├── index.html          # Main HTML file
+├── style.css           # Global fantasy-themed styles
+├── script.js           # JavaScript for UI logic and mock interactivity
+└── assets/             # Icons, background images, sparkles, etc.
+    ├── images/         # Image assets
+    ├── icons/          # Icon files (e.g., Font Awesome)
+    └── styles/         # Additional styles
 
 ---
 
