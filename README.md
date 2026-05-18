@@ -1,138 +1,107 @@
-````markdown
-# PromptCraft ✨  
-### AI-Powered Context-Aware Image Generation Platform for Young Creators
+# PromptCraft ✨
 
-PromptCraft is a fantasy-themed AI image generation platform designed to make creativity fun, interactive, and accessible for children and young creators.  
+PromptCraft is a context-aware AI image generation platform designed to make creativity more interactive, engaging, and accessible for young creators. The platform allows users to generate AI-generated artwork from natural language prompts while maintaining contextual continuity across multiple generations.
 
-The platform transforms natural language prompts into visually rich AI-generated artwork while maintaining contextual memory across generations to create continuous visual storytelling experiences.
+Unlike traditional text-to-image generators, PromptCraft remembers previous prompts during a session, enabling users to build visual stories step by step. This creates a more immersive and creative experience, especially for storytelling and imaginative world-building.
 
-Built as a final-year B.Tech Computer Science project, PromptCraft combines modern frontend development, AI inference APIs, prompt engineering, and contextual session memory into a polished full-stack application.
+Developed as a Final Year B.Tech Computer Science Engineering project, PromptCraft combines modern frontend development, FastAPI backend architecture, prompt engineering, and generative AI APIs into a complete full-stack application.
 
 ---
 
-# 🌟 Features
+## Features
 
-## 🎨 AI Image Generation
-Generate unique AI artwork from simple text descriptions using the FLUX.1 Schnell image generation model through the Hugging Face Inference API.
+### AI Image Generation
+Generate unique images from simple text prompts using the FLUX.1 Schnell image generation model through the Hugging Face Inference API.
 
-## 🧠 Context-Aware Prompt Memory
-PromptCraft remembers previous prompts within a session and combines them with new prompts to maintain story continuity.
+### Context-Aware Prompt Memory
+PromptCraft maintains session-based memory and combines previous prompts with new ones to preserve scene continuity.
 
-### Example
-- Prompt 1: *"A wizard in a forest"*
-- Prompt 2: *"Now the wizard is fighting a dragon"*
+Example:
 
-The second image preserves contextual understanding from the first prompt.
+- Prompt 1: *A wizard standing in a dark forest*
+- Prompt 2: *Now the wizard is fighting a dragon*
 
----
+The second image is generated while considering the context from the first prompt.
 
-## ✨ Fantasy-Themed User Experience
-The interface is designed with:
-- Magical glowing UI effects
-- Wand-themed animations
-- Fantasy typography
-- Interactive suggestion chips
-- Smooth transitions and hover effects
+### Interactive User Experience
+The platform includes:
+- Fantasy-themed UI design
+- Animated effects and transitions
+- Prompt suggestion chips
+- Dynamic loading animations
+- Responsive layout for all devices
 
----
+### Session Persistence
+Each user session is stored locally in the browser using localStorage, allowing contextual continuity even after page refreshes.
 
-## 💡 Prompt Suggestions
-Users can quickly experiment with curated creative prompts using interactive prompt chips.
-
----
-
-## 📱 Fully Responsive Design
-Optimized for:
-- Desktop
-- Tablet
-- Mobile devices
-
----
-
-## 🔄 Session Persistence
-Session IDs are stored using browser localStorage, allowing contextual continuity even after page refreshes.
-
----
-
-## 🧩 Dynamic Fun Facts & Creative Suggestions
-After image generation, PromptCraft provides:
-- AI-related fun facts
+### Creative Prompt Suggestions
+The platform provides:
+- Fun AI-related facts
 - Creative inspiration prompts
-- Enhanced storytelling ideas
+- Enhanced storytelling suggestions
 
 ---
 
-# 🏗️ System Architecture
+## Tech Stack
 
-```text
-User Prompt
-     ↓
-Frontend (HTML/CSS/JavaScript)
-     ↓
-FastAPI Backend
-     ↓
-Session Context Manager
-     ↓
-Prompt Enhancement & Context Combination
-     ↓
-Hugging Face Inference API
-     ↓
-FLUX.1 Schnell Model
-     ↓
-Generated AI Image
-     ↓
-Frontend Rendering
-```
-
----
-
-# ⚙️ Tech Stack
-
-## Frontend
+### Frontend
 - HTML5
 - CSS3
 - JavaScript
 - Font Awesome
 - Google Fonts
 
-## Backend
+### Backend
 - Python
 - FastAPI
 - Uvicorn
 
-## AI & APIs
+### AI Integration
 - Hugging Face Inference API
-- FLUX.1 Schnell Image Generation Model
+- FLUX.1 Schnell Model
 
-## Additional Libraries
+### Additional Libraries
 - Requests
 - Base64
 - CORSMiddleware
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
 ```bash
 PromptCraft/
 │
-├── main.py                 # FastAPI backend server
-├── requirements.txt        # Python dependencies
+├── main.py
+├── requirements.txt
 │
-├── index.html              # Main frontend page
-├── style.css               # Styling and responsiveness
-├── script.js               # Frontend logic and API calls
+├── index.html
+├── style.css
+├── script.js
 │
-├── images/                 # UI assets and example images
+├── images/
 │
-└── README.md               # Project documentation
+├── LICENSE
+└── README.md
 ```
 
 ---
 
-# 🚀 Installation & Setup
+## How It Works
 
-## 1️⃣ Clone the Repository
+1. The user enters a text prompt.
+2. The frontend sends the prompt to the FastAPI backend.
+3. The backend checks whether previous prompts exist for the current session.
+4. If context exists, the backend combines the old and new prompts.
+5. The combined prompt is sent to the Hugging Face Inference API.
+6. The FLUX.1 Schnell model generates the image.
+7. The generated image is returned and displayed on the frontend.
+
+---
+
+## Installation and Setup
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/promptcraft.git
@@ -141,16 +110,16 @@ cd promptcraft
 
 ---
 
-## 2️⃣ Create a Virtual Environment
+### 2. Create a Virtual Environment
 
-### Windows
+#### Windows
 
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-### Linux / Mac
+#### Linux / macOS
 
 ```bash
 python3 -m venv venv
@@ -159,7 +128,7 @@ source venv/bin/activate
 
 ---
 
-## 3️⃣ Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -167,31 +136,25 @@ pip install -r requirements.txt
 
 ---
 
-## 4️⃣ Configure Hugging Face API Key
+### 4. Configure Hugging Face API Key
 
-Create a `.env` file:
+Create a `.env` file in the project root directory:
 
 ```env
 HF_API_KEY=your_huggingface_api_key
 ```
 
-Replace:
-
-```text
-your_huggingface_api_key
-```
-
-with your actual Hugging Face API key.
+Replace `your_huggingface_api_key` with your actual Hugging Face API key.
 
 ---
 
-## 5️⃣ Run the Backend Server
+### 5. Run the Backend Server
 
 ```bash
 python main.py
 ```
 
-Backend will run on:
+The backend server will start at:
 
 ```text
 http://localhost:8000
@@ -199,199 +162,95 @@ http://localhost:8000
 
 ---
 
-## 6️⃣ Launch Frontend
+### 6. Launch the Frontend
 
 Open `index.html` in your browser.
 
-For best results, use:
+For better development experience, use:
 - VS Code Live Server
 - Localhost hosting
-- Static file server
+- Any static web server
 
 ---
 
-# 🧠 How Context Memory Works
+## Example Workflow
 
-PromptCraft uses session-based contextual memory.
-
-Each user receives a unique session ID stored in browser localStorage.
-
-The backend maintains a session memory dictionary:
-
-```python
-session_memory = {}
-```
-
-When a new prompt is submitted:
-
-```python
-combined_prompt = f"{previous}, {prompt}"
-```
-
-This enables:
-- Visual storytelling
-- Scene continuity
-- Character persistence
-- Progressive world building
-
----
-
-# 🔥 Example Workflow
-
-## Step 1
+### Step 1
 User enters:
 
 ```text
 A magical castle floating in the sky
 ```
 
-## Step 2
-AI generates image.
+### Step 2
+The AI generates the image.
 
-## Step 3
-User continues:
-
-```text
-Now add a dragon flying around it
-```
-
-## Step 4
-Backend combines prompts:
+### Step 3
+User continues with:
 
 ```text
-A magical castle floating in the sky, Now add a dragon flying around it
+Now add a dragon flying around the castle
 ```
 
-## Step 5
-AI generates contextually connected artwork.
+### Step 4
+The backend combines both prompts to preserve continuity.
+
+### Step 5
+A contextually connected image is generated.
 
 ---
 
-# 📸 UI Highlights
+## Current Limitations
 
-## 🎭 Fantasy Visual Identity
-- Animated magical sparkles
-- Wand-themed loading effects
-- Fantasy fonts
-- Neon glow effects
+The current version of PromptCraft has a few limitations:
 
----
-
-## 🪄 Interactive Components
-- Suggestion chips
-- Smooth scrolling navigation
-- Responsive menu
-- Dynamic image reveal animations
+- Session memory is stored only in RAM
+- No database integration
+- No user authentication
+- No prompt moderation or filtering
+- No image history or gallery
+- Limited scalability for large numbers of users
 
 ---
 
-## 📱 Responsive Layout
-PromptCraft automatically adapts to:
-- Mobile phones
-- Tablets
-- Large desktop displays
+## Future Enhancements
+
+Planned improvements include:
+
+- User authentication system
+- Cloud deployment
+- Database integration
+- Prompt moderation and child-safe filtering
+- Image history and downloadable galleries
+- Advanced prompt enhancement
+- Image upload and ControlNet support
+- Async request handling and caching
+- Improved scalability and performance
 
 ---
 
-# 🔐 Current Limitations
+## Educational Value
 
-The current prototype has some limitations:
+PromptCraft demonstrates practical implementation of concepts related to:
 
-- In-memory session storage
-- No authentication system
-- No database persistence
-- No prompt moderation
-- No rate limiting
-- API key currently exposed in backend source
-- Limited scalability for concurrent users
-
----
-
-# 🚧 Future Enhancements
-
-## 🧠 Advanced Prompt Engineering
-- Automatic prompt enhancement
-- Style templates
-- Scene consistency improvements
-
----
-
-## 🖼️ Image Upload + ControlNet
-Allow users to upload reference images and generate AI-modified scenes.
-
-### Example
-- Upload castle image
-- Generate dragon flying over it
-
----
-
-## 👤 User Accounts
-- Authentication system
-- Saved galleries
-- Prompt history
-
----
-
-## ☁️ Cloud Deployment
-Deploy using:
-- Docker
-- Render
-- Railway
-- AWS
-- Vercel frontend hosting
-
----
-
-## 🛡️ AI Safety Layer
-- Prompt moderation
-- Child-safe filtering
-- Content restrictions
-
----
-
-## ⚡ Performance Improvements
-- Redis caching
-- Async API requests
-- GPU acceleration
-- Queue-based processing
-
----
-
-# 📚 Educational Value
-
-PromptCraft demonstrates concepts from:
 - Artificial Intelligence
 - Prompt Engineering
 - API Integration
 - Frontend Development
 - Backend Development
 - Contextual Memory Systems
-- Human-Computer Interaction
 - Responsive Web Design
+- Human-Computer Interaction
 
 ---
 
-# 🎓 Academic Relevance
+## Academic Context
 
-This project was developed as a Final Year B.Tech Computer Science Engineering project focused on:
-- Applied AI systems
-- Generative AI
-- Interactive user experiences
-- Context-aware applications
+This project was developed as a Final Year B.Tech Computer Science Engineering project focusing on generative AI systems and interactive user experiences.
 
 ---
 
-# 👨‍💻 Author
-
-Developed by a Computer Science Engineering student passionate about:
-- AI systems
-- Generative models
-- Human-centered interfaces
-- Creative technology
-
----
-
-# 📄 License
+## License
 
 MIT License
 
@@ -417,23 +276,16 @@ SOFTWARE.
 
 ---
 
-# 🙌 Acknowledgements
+## Acknowledgements
 
 Special thanks to:
 - Hugging Face
 - FastAPI
-- FLUX.1 Schnell Model
+- FLUX.1 Schnell
 - Open-source AI and web development communities
 
 ---
 
-# ⭐ If You Like This Project
+## Author
 
-If you found PromptCraft interesting, consider:
-- Starring the repository
-- Forking the project
-- Contributing improvements
-- Sharing feedback
-
-✨ *“Where imagination meets artificial intelligence.”*
-````
+Developed as a Final Year B.Tech Computer Science Engineering project exploring context-aware generative AI systems and creative human-computer interaction.
